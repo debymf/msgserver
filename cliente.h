@@ -4,6 +4,7 @@
 #include<sys/types.h>
 #include<sys/ipc.h>
 #include<sys/msg.h>
+#include<string.h>
 
 /* Estrutura para pedir autorizacao ou retirada*/
 typedef struct
@@ -24,6 +25,7 @@ typedef struct
 	{
 		int pid;
 		char buf[50];
+		int autorizado;
 	} msg;
 } Msg2Struct;
 
@@ -31,5 +33,5 @@ typedef struct
 int idFila[9];
 
 int solicitarEntrada(int pid);
-void enviarMsg(int pid);
+void enviarMsg(int pid, int autorizacao);
 
