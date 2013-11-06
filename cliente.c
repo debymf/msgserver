@@ -102,7 +102,7 @@ int solicitarEntrada(int pid){
 	else{
 		for(i=0;i<8;i++){
 			msgrcv(idFila[0], &msg1_env, sizeof(msg1_env.msg), 0, 0);
-			printf("\nRecebo de: %d\n", msg1_env.msg.pid); 
+			printf("\nRecebo de: %d, Autorizacao: %d\n", msg1_env.msg.pid, msg1_env.msg.autoriza); 
 		}
 
 	}
