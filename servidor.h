@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<errno.h>
-#include<sys/shm.h>
 #include<sys/types.h>
 #include<sys/ipc.h>
 #include<sys/msg.h>
+#include<sys/shm.h>
 #include<string.h>
+
 
 struct inServer
 {
@@ -23,15 +24,14 @@ struct msgServer
 };
 
 
-int idFilaE1[9];
-int idFilaE2[9];
-int idFilaM[9];
-
 int filaE1;
 int filaE2;
 int filaM;
 
-int solicitarEntrada(int pid);
-void enviarMsg(int pid, int autorizacao);
-int solicitarSaida(int pid, int autorizacao);
+int num_clientes=0;
 
+int clientes_cadastrados[5]={0};
+
+void	inserirClientes();
+void	imprimirMsgs();
+void	removerClientes();
